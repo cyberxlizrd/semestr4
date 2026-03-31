@@ -1,0 +1,97 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Packages ---
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}  
+\usepackage{xcolor} % Potřebujeme pro barvičky v kódu
+
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily\footnotesize,
+    basewidth={0.5em,0.45em},
+    lineskip=-1pt,
+    aboveskip=1.5em,
+    belowskip=1.5em,
+    % --------------------------------------------------
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    frame=single,
+    backgroundcolor=\color{gray!5},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+    captionpos=b,
+    extendedchars=true,
+    %literate={á}{{\'a}}1 {č}{{\v{c}}}1 {ď}{{\v{d}}}1 {é}{{\'e}}1 {ě}{{\v{e}}}1
+    %            {í}{{\'i}}1 {ň}{{\v{n}}}1 {ó}{{\'o}}1 {ř}{{\v{r}}}1 {š}{{\v{s}}}1
+    %            {ť}{{\v{t}}}1 {ú}{{\'u}}1 {ů}{{\r{u}}}1 {ý}{{\'y}}1 {ž}{{\v{z}}}1
+    %            {Á}{{\'A}}1 {Č}{{\v{C}}}1 {Ď}{{\v{D}}}1 {É}{{\'E}}1 {Ě}{{\v{E}}}1
+    %            {Í}{{\'I}}1 {Ň}{{\v{N}}}1 {Ó}{{\'O}}1 {Ř}{{\v{R}}}1 {Š}{{\v{S}}}1
+    %            {Ť}{{\v{T}}}1 {Ú}{{\'U}}1 {Ů}{{\r{U}}}1 {Ý}{{\'Y}}1 {Ž}{{\v{Z}}}1
+}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{setspace}    % For line spacing
+\usepackage{titlesec}    % For section formatting
+\usepackage{float}       % For precise image placement
+\usepackage{csquotes}    % For proper quotation marks
+\usepackage{url} 
+\usepackage{hyperref}
+\usepackage{csquotes} % Biblatex to často vyžaduje pro správné uvozovky
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{literatura.bib}
+
+% --- Page Setup & Typography ---
+\geometry{a4paper, left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\setstretch{1.5} % 1.5 line spacing is standard for university reports
+
+% Section title formatting
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{1em}{}
+
+\begin{document}
+
+% --- Title Header ---
+\begin{center}
+    {\large \textbf{BPC-STE Lab. 8A Přírava 16. 3. 2026}}\\[0.15cm]
+    {\large \textbf{Autor:} Anna Hrušková (270800)}\\[0.15cm]
+    %{\large \textbf{}
+\end{center}
+\vspace{0.4cm} % Adds space between the header and the "Úvod" section
+
+\subsection*{Výpočet střední hodnoty zpoždění efektu Chorus}
+
+Pro výpočet zpoždění $\tau$:
+\begin{equation}
+\tau =  \frac{k - 0,5}{\tau} = \frac{2k - 1}{2f_{\min}}
+\end{equation}
+
+\begin{enumerate}
+    \item Pro 4. minimum ($k=4, f_{min_4}=514$ Hz): 
+    $\tau_1 = \frac{2 \cdot 4 - 1}{2 \cdot 514} = \frac{7}{1028} \approx 6,81 \text{ ms}$
+    
+    \item Pro 5. minimum ($k=5, f_{min_5}=645$ Hz): 
+    $\tau_2 = \frac{2 \cdot 5 - 1}{2 \cdot 645} = \frac{9}{1290} \approx 6,98 \text{ ms}$
+    
+    \item Pro 6. minimum ($k=6, f_{min_6}=765$ Hz):
+    $\tau_3 = \frac{2 \cdot 6 - 1}{2 \cdot 765} = \frac{11}{1530} \approx 7,19 \text{ ms}$
+\end{enumerate}
+
+\textbf{Průměrná hodnota:}
+\begin{equation}
+\tau_{avg} = \frac{6,81 + 6,98 + 7,19}{3} \approx \mathbf{6,99 \text{ ms}}
+\end{equation}
+
+
+
+
+\printbibliography[title={Seznam použité literatury}]
+\end{document}
