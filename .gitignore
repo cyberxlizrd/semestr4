@@ -1,3 +1,10 @@
 
 *.odt
 .~lock.*#
+*.aux
+*.log
+*.fls
+*.run.xml
+*.synctex.gz
+*.fdb_latexmk
+*.bcf
